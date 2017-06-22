@@ -1,0 +1,1 @@
+# viewpager-autosliding
