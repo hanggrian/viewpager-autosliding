@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AutoSlidingViewPagerStyle">
+        <attr name="autoSlidingViewPagerStyle" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="AutoSlidingViewPager">
+        <!-- Count down to next pager sliding, in milliseconds. -->
+        <attr name="slidingCountDown" format="integer"/>
+        <!-- Stop auto-sliding behavior when user interacts with ViewPager. -->
+        <attr name="stopSlideOnTouch" format="boolean"/>
+    </declare-styleable>
+</resources>

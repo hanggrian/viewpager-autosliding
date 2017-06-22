@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+apply from: 'https://raw.githubusercontent.com/HendraAnggrian/hendraanggrian.github.io/master/bintray.gradle'
+
+android {
+    compileSdkVersion versions.sdk.target
+    buildToolsVersion versions.buildTools
+    defaultConfig {
+        minSdkVersion versions.sdk.min
+        targetSdkVersion versions.sdk.target
+    }
+    sourceSets {
+        main.manifest.srcFile 'AndroidManifest.xml'
+        main.java.srcDirs 'src'
+        main.res.srcDirs = ['res', 'res-public']
+        main.resources.srcDir 'src'
+    }
+}
+
+dependencies {
+    compile "com.android.support:support-v4:$versions.support"
+}
+
+publish {
+    userOrg = bintray.user
+    groupId = bintray.group
+    artifactId = bintray.artifact.collapsingtoolbarlayout_subtitle.id
+    publishVersion = versions.release
+    desc = bintray.artifact.collapsingtoolbarlayout_subtitle.desc
+    website = bintray.artifact.collapsingtoolbarlayout_subtitle.website
+}

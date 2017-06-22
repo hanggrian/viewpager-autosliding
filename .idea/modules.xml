@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpager-autosliding.iml" filepath="$PROJECT_DIR$/viewpager-autosliding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpager-autosliding/viewpager-autosliding-viewpager-autosliding.iml" filepath="$PROJECT_DIR$/viewpager-autosliding/viewpager-autosliding-viewpager-autosliding.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+buildscript {
+    ext.kotlin = '1.1.2-5'
+    ext.indicator = '1.2.2'
+    ext.spannable = '0.7'
+    ext.bundler = '0.5.0'
+    ext.runner = '0.5'
+    ext.espresso = '2.2.2'
+    ext.junit = '4.12'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin"
+    }
+}
+
+android {
+    compileSdkVersion versions.sdk.target
+    buildToolsVersion versions.buildTools
+    defaultConfig {
+        applicationId 'com.example.autoslidingviewpager'
+        versionCode 1
+        versionName '1.0'
+        minSdkVersion 11
+        targetSdkVersion versions.sdk.target
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile project(':viewpager-autosliding')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin"
+    compile "com.android.support:appcompat-v7:$versions.support"
+    compile "me.relex:circleindicator:$indicator@aar"
+    compile "com.hendraanggrian:spannable-text:$spannable"
+
+    compile "com.hendraanggrian:bundler:$bundler"
+    kapt "com.hendraanggrian:bundler-compiler:$bundler"
+
+    androidTestCompile("com.android.support.test:runner:$runner") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+    testCompile "junit:junit:$junit"
+}
